@@ -1,6 +1,11 @@
 // Scouts Stad Torhout — interactions
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* Prevent placeholder "#" links (e.g. desktop Takken dropdown trigger) from jumping the page */
+  document.querySelectorAll('a[href="#"]').forEach(a => {
+    a.addEventListener('click', (e) => e.preventDefault());
+  });
+
   /* Sticky nav blur on scroll */
   const topbar = document.querySelector('.topbar');
   const onScroll = () => {
